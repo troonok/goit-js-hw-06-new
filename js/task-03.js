@@ -18,7 +18,18 @@ imagesList.style.listStyle = "none";
 imagesList.style.justifyContent = "space-between";
 imagesList.style.alignItems = "center";
 
-for (let img of images){
-imagesList.insertAdjacentHTML("afterbegin",`<li><img src=${img.url} alt=${img.alt} width ="400px"></img></li>`);
 
-}
+const markup = images
+	.map(image => `<li><img class="picture" src=${image.url} width = '400px' alt='${image.alt}'></img></li>`)
+	.join('')
+
+  imagesList.insertAdjacentHTML('afterbegin', markup)
+   
+
+
+
+
+
+
+
+
